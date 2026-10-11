@@ -1,0 +1,27 @@
+name: build-web2apk
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      publish_package:
+        type: boolean
+        default: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '17' }
+      - run: chmod +x ./gradlew
+      - run: ./gradlew --no-daemon assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: muse-number-two-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
+      - if: ${{ inputs.publish_package }}
+        run: ./gradlew --no-daemon publish -PpackageVersion=${{ github.run_number }}
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
