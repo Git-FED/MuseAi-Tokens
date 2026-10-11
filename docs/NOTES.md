@@ -1,15 +1,10 @@
-# Build notes
+# Decisions
 
-## Visual direction
-
-Flat, friendly, slightly irreverent cartoon language: thick navy outlines, coral/yellow/sky-blue accents, large expressive typography, oversized rounded shapes, and a warm paper background.
-
-## Promotion assets
-
-- `assets/promo/hero-blob.png`: goofy blob mascot holding a token.
-- `assets/promo/referral-ticket.png`: smiling referral ticket mascot.
-- `assets/promo/discord-gate.png`: tiny chat-town gate with a waving blob.
-- `assets/promo/price-spring.png`: googly-eyed spring bouncing a coin.
-- `assets/favicon.png`: minimal winking token icon for browser tabs.
-
-The page animates the illustrations with CSS so the packaged site remains lightweight and works offline.
+- The Android app is the product. Token Town is downstream promotional/checkout material.
+- The app runs an offline bundle under `app/src/main/assets/site`.
+- No live site is required at runtime for the bundled app shell.
+- The favicon and comedic promo GIFs are app assets, not merely website decorations.
+- Referral code `5F2V31` is baked into the in-app page.
+- Signing keystore is local only and must never be committed.
+- GitHub Actions builds the APK on every push.
+- The wrapper is unofficial and must not claim affiliation with muse.ai.
