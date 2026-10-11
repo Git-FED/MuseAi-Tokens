@@ -1,19 +1,30 @@
-# Muse Number Two — app-first Android wrapper
+# Token Town
 
-The Android APK is the product. It wraps an offline Muse referral experience under `app/src/main/assets/site/` and carries the referral code, favicon, CSS, JavaScript, and promotional images inside the APK.
+A self-contained animated promotional landing page for sharing a Muse referral code.
 
-The bundled page opens from `file:///android_asset/site/index.html`, displays code `5F2V31`, and sends the Muse join link and Discord invite to the system browser. Token Town is downstream promotional/checkout material, not the product app itself.
-
-This is an unofficial wrapper and is not affiliated with muse.ai.
-
-## Build
+## Run locally
 
 ```bash
-bash scripts/build.sh
+python3 -m http.server 8080
 ```
 
-A complete build requires Android SDK tooling and Gradle/Android Studio. The GitHub Actions workflow assembles and uploads a debug APK on each push.
+Then open <http://localhost:8080>.
 
-## Windows desktop app
+## Included
 
-The `desktop-electron/` folder builds a Windows Electron installer and portable app. The desktop app opens `https://muse.ai/` and requires an internet connection; the Android app uses its bundled offline page.
+- Responsive single-page HTML landing page
+- Favicon and Apple touch icon wiring
+- CSS-first motion with reduced-motion support
+- Four comedic promotional illustrations and animated presentation in the page
+- Copy-to-clipboard referral code interaction
+- No framework, build step, or API key required
+
+## Referral copy
+
+Check out Muse, your personal AI agent. Redeem my code in Settings within 48 hours of joining and we'll both get 1 billion Muse tokens.
+
+Code: `5F2V31`
+
+Join: <https://muse.ai/join>
+
+> Token Town is an independent promotional page. Muse handles the actual account and token terms.
