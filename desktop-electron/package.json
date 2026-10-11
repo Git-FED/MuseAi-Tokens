@@ -1,0 +1,31 @@
+{
+  "name": "muse-number-two-desktop",
+  "version": "1.0.0",
+  "description": "Unofficial Muse desktop launcher",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "^32.2.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.fedpromptly.musenumbertwo.desktop",
+    "productName": "Muse Number Two",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "package.json"],
+    "win": {
+      "target": ["nsis", "portable"],
+      "artifactName": "Muse-Number-Two-${version}-${os}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

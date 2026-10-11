@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        web.loadUrl("file:///android_asset/site/index.html");
+        web.loadUrl("https://muse.ai/");
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override public void handleOnBackPressed() {
                 if (web.canGoBack()) web.goBack();

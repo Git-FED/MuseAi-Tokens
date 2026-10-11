@@ -13,3 +13,7 @@ bash scripts/build.sh
 ```
 
 A complete build requires Android SDK tooling and Gradle/Android Studio. The GitHub Actions workflow assembles and uploads a debug APK on each push.
+
+## Windows desktop app
+
+The `desktop-electron/` folder builds a Windows Electron installer and portable app. Both the Android app and desktop app open `https://muse.ai/`.
