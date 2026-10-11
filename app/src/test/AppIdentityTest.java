@@ -1,10 +1,15 @@
 package com.fedpromptly.musenumbertwo;
 
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 public class AppIdentityTest {
-    @Test public void referralCodeIsDocumented() {
-        assertEquals("5F2V31", "5F2V31");
+    @Test public void referralCodeIsConfigured() {
+        assertEquals("5F2V31", ReferralInfo.CODE);
+    }
+
+    @Test public void referralJoinUrlIsConfigured() {
+        assertEquals("https://muse.ai/join", ReferralInfo.JOIN_URL);
     }
 }

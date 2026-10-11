@@ -1,9 +1,10 @@
 # Platform launch behavior
 
-All three entry points open the same destination: `https://muse.ai/`.
+The Android app and the Windows desktop launcher share the Muse destination, but they launch differently:
 
-- **Android app:** `MainActivity` loads the URL directly in its WebView.
-- **HTML:** `index.html` redirects to the URL and retains a visible fallback link.
-- **Windows desktop app:** Electron `main.js` calls `BrowserWindow.loadURL('https://muse.ai/')`.
+- **Android app:** loads the bundled offline referral page at `file:///android_asset/site/index.html`.
+- **Android referral buttons:** open `https://muse.ai/join` and the Discord invite in the system browser.
+- **Windows desktop app:** Electron loads `https://muse.ai/` directly and requires an internet connection.
+- **Token Town website:** the promotional page is `promotional.html`; its root `index.html` remains a lightweight Muse redirect.
 
-The desktop app is an unofficial Electron launcher and requires an internet connection to display the remote site.
+The Android app is an unofficial wrapper and is not affiliated with muse.ai.
